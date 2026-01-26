@@ -40,7 +40,7 @@ public class Basics {
         }
         */
         System.out.println(response);
-        JsonPath jsp = new JsonPath(response);   // for parsing JSON structure
+        JsonPath jsp = BaseLibrary.rawFromJSONResponse(response);
         placeIdFromPostResponse = jsp.getString("place_id");
 
         System.out.println("PlaceId created is: " +placeIdFromPostResponse);
@@ -72,7 +72,7 @@ public class Basics {
                 .assertThat().log().all().statusCode(200)
                 .extract().response().asString();
 
-        JsonPath jsp_update = new JsonPath(responseUpdate);   // for parsing JSON structure
+        JsonPath jsp_update = BaseLibrary.rawFromJSONResponse(responseUpdate);
         String newAddressFromPutResponse = jsp_update.getString("address");
 
         System.out.println("New Address is: " +newAddressFromPutResponse);
