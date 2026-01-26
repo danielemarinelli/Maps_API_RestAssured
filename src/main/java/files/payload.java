@@ -1,5 +1,6 @@
 package files;
 
+
 public class payload {
     public static String AddPlace(){
         return "{\n" +
@@ -18,7 +19,17 @@ public class payload {
                 "  \"website\": \"http://google.com\",\n" +
                 "  \"language\": \"English-USA\"\n" +
                 "}";
-
-
     }
+
+    public static String UpdateAddressPlace(String placeId, String newAddress){
+
+        return "{\n" +
+                "\"place_id\":\""+placeId+"\",\n" +
+                "\"address\":\""+newAddress+"\",\n" +
+                "\"key\":\"qaclick123\"\n" +
+                "}";
+    }
+
+
+
 }
