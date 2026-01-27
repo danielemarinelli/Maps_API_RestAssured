@@ -30,6 +30,63 @@ public class payload {
                 "}";
     }
 
+    public static String practiceParseJSON(){
 
+        /*
+        TC1. Print No of courses returned by API
+
+        TC2.Print Purchase Amount
+
+        TC3. Print Title of the first course
+
+        TC4. Print All course titles and their respective Prices
+
+        TC5. Print no of copies sold by RPA Course
+
+        TC6. Verify if Sum of all Course prices matches with Purchase Amount
+        */
+
+        return "{\"dashboard\": {\n" +
+                "\n" +
+                "\"purchaseAmount\": 910,\n" +
+                "\n" +
+                "\"website\": \"rahulshettyacademy.com\"\n" +
+                "\n" +
+                "},\n" +
+                "\n" +
+                "\"courses\": [\n" +
+                "\n" +
+                "{\n" +
+                "\n" +
+                "\"title\": \"Selenium Python\",\n" +
+                "\n" +
+                "\"price\": 50,\n" +
+                "\n" +
+                "\"copies\": 6\n" +
+                "\n" +
+                "},\n" +
+                "\n" +
+                "{\n" +
+                "\n" +
+                "\"title\": \"Cypress\",\n" +
+                "\n" +
+                "\"price\": 40,\n" +
+                "\n" +
+                "\"copies\": 4\n" +
+                "\n" +
+                "},\n" +
+                "\n" +
+                "{\n" +
+                "\n" +
+                "\"title\": \"RPA\",\n" +
+                "\n" +
+                "\"price\": 45,\n" +
+                "\n" +
+                "\"copies\": 10\n" +
+                "\n" +
+                "}\n" +
+                "\n" +
+                "]}";
+    }
 
 }
