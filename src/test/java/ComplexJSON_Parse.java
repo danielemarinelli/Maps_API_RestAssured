@@ -58,6 +58,38 @@ public class ComplexJSON_Parse {
         String titleSecondCourse = js.getString("courses[1].title");
         System.out.println("The second course title is: " +titleSecondCourse);
 
+        //TC4.
+        for(int i=0; i<js.getInt("courses.size()"); i++){
+            System.out.println(js.getString("courses["+i+"].title") + " ---> " +js.getString("courses["+i+"].price"));
+        }
+
+        //TC5.
+        String course = "RPA";
+        for(int i=0; i<js.getInt("courses.size()"); i++){
+            if(js.getString("courses["+i+"].title").equalsIgnoreCase(course)){
+                System.out.println("Number of copies sold by RPA Course: "+js.getString("courses["+i+"].copies"));
+                break;
+            }
+        }
+
+        //TC6.
+        int partialPrize;
+        int totalPrize = 0;
+        for(int i=0; i<js.getInt("courses.size()"); i++){
+
+            int p = js.getInt("courses["+i+"].price");
+            int c = js.getInt("courses["+i+"].copies");
+            partialPrize = p*c;
+            totalPrize = totalPrize + partialPrize;
+
+        }
+        //System.out.println("Total price for all courses: "+totalPrize);
+        if(js.getInt("dashboard.purchaseAmount")==totalPrize){
+            System.out.println("Total purchase amount is equal to: "+totalPrize);
+        }else{
+            System.out.println("Total purchase amount is NOT equal to: "+totalPrize);
+        }
+
 
     }
 
