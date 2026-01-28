@@ -28,6 +28,7 @@ public class payload {
                 "\"address\":\""+newAddress+"\",\n" +
                 "\"key\":\"qaclick123\"\n" +
                 "}";
+
     }
 
     public static String practiceParseJSON(){
@@ -87,6 +88,28 @@ public class payload {
                 "}\n" +
                 "\n" +
                 "]}";
+    }
+
+    public static String AddBook(String title, String isbn, String aisle, String author){
+
+        String payload = "{\r\n" +
+                "\r\n" +
+                "\"name\":\""+title+"\",\r\n" +
+                "\"isbn\":\""+isbn+"\",\r\n" +
+                "\"aisle\": \""+aisle+"\",\r\n" +
+                "\"author\":\""+author+"\"\r\n" +
+                "}\r\n";
+        return payload;
+
+    }
+
+    public static String DeleteBookWithId(String id){
+
+        String payload = "{\r\n" +
+                "\"ID\" : \""+id+"\n"+
+                "}";
+        return payload;
+
     }
 
 }
