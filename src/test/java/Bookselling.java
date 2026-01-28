@@ -14,7 +14,7 @@ public class Bookselling {
     JsonPath js;
 
     @Test(priority = 1)
-    public void AddBook(){
+    public void AddBookDeleteBook(){
         RestAssured.baseURI="http://216.10.245.166";
 
         String response = given().log().all()
@@ -38,6 +38,19 @@ public class Bookselling {
         System.out.println("Book Id is ---> "+Id);
         System.out.println("<--- ##### ---> ");
 
+        String responseDelete = given().log().all()
+                .headers("Content-Type","application/json")
+                .body(payload.DeleteBookWithId(Id))
+                .when()
+                .post("/Library/Deletebook.php")
+                .then()
+                .assertThat().statusCode(200)
+                .extract().response().asString();
+
+        JsonPath js_del = BaseLibrary.rawFromJSONResponse(responseDelete);
+        String msg = js_del.getString("msg");
+        System.out.println(msg);
+        System.out.println("<--- ##### ---> ");
     }
 
 

@@ -106,8 +106,9 @@ public class payload {
     public static String DeleteBookWithId(String id){
 
         String payload = "{\r\n" +
-                "\"ID\" : \""+id+"\n"+
-                "}";
+                "\r\n" +
+                "\"ID\" : \""+id+"\"\r\n"+
+                "}\r\n";
         return payload;
 
     }
