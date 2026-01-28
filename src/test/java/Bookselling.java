@@ -2,6 +2,7 @@ import files.payload;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.*;
@@ -35,7 +36,40 @@ public class Bookselling {
         // let's extract the ID created:
         Id = js.getString("ID");
         System.out.println("Book Id is ---> "+Id);
-        
+        System.out.println("<--- ##### ---> ");
+
+    }
+
+
+    @Test(priority = 2,dataProvider = "manyBooks")
+    public void AddBooksFromDataProvider(String title, String isbn, String aisle, String author){
+        RestAssured.baseURI="http://216.10.245.166";
+
+        String response = given().log().all()
+                .headers("Content-Type","application/json")
+                .body(payload.AddBook(title,isbn,aisle,author))
+                .when()
+                .post("/Library/Addbook.php")
+                .then()
+                .assertThat().statusCode(200)
+                .extract().response().asString();
+        js = BaseLibrary.rawFromJSONResponse(response);
+
+        Id = js.getString("ID");
+        System.out.println("Book Id is ---> "+Id);
+
+    }
+
+@DataProvider(name="manyBooks")
+    public Object [][] getDataForAllBooks(){
+        // ARRAY --> it's a collections of elements
+        // MULTIDIMENSIONAL ARRAY --> it's a collection of arrays
+        return new Object [][]{
+            {"Learn RobotFramework","1","aa","D.M."},
+            {"Playwright","2","bb","T.M."},
+            {"Selenium WebDriver","3","cc","J.J."},
+            {"Java Course","4","dd","E.E."}
+        };
     }
 
 }
