@@ -1,0 +1,12 @@
+{
+  "fields": {
+    "project":
+    {
+      "key": "SCRUM"
+    },
+    "summary": "1_--!!Background Color button not green - automation RestAssured",
+    "issuetype": {
+      "name": "Task"
+    }
+  }
+}
