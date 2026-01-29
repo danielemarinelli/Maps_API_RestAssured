@@ -15,7 +15,7 @@ public class Basics {
         //given() - all input details
         //when() - submit the API  -- endpoint and method
         //then() - validate the response
-
+        // body of the POST is hard coded in payload class
         RestAssured.useRelaxedHTTPSValidation();   // ---> to bypass SSL verification
         RestAssured.baseURI="https://rahulshettyacademy.com/";
         String response = given().log().all().queryParam("key","qaclick123")

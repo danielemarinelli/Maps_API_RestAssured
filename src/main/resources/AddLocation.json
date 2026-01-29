@@ -1,0 +1,18 @@
+{
+  "location": {
+    "lat": -85.383494,
+    "lng": 133.427362
+  },
+  "accuracy": 500,
+  "name": "Backend house",
+  "phone_number": "(+1) 716 893 3937",
+  "address": "287, fairways, williamsville",
+  "types": [
+    "ava park",
+    "teams"
+  ],
+  "website": "http://buffalonews.com",
+  "language": "Italian-IT"
+}
+
+
