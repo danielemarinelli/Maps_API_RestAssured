@@ -1,34 +1,41 @@
 package POJO;
 
+import java.util.List;
+
 public class Courses {
 
-    public String webAutomation;
-    public String api;
-    public String mobile;
+    // webAutomation, api, mobile are Array of multiple JSON objects, so we need to return a List of items
+    public List<WebAutomation> webAutomation;
+    public List<Api> api;
+    public List<Mobile> mobile;
 
-    public void setWebAutomation(String webAutomation) {
-        this.webAutomation = webAutomation;
-    }
-
-    public void setApi(String api) {
-        this.api = api;
-    }
-
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
-    }
-
-    public String getWebAutomation() {
+    public List<WebAutomation> getWebAutomation() {
         return webAutomation;
     }
 
-    public String getMobile() {
+    public List<Api> getApi() {
+        return api;
+    }
+
+    public List<Mobile> getMobile() {
         return mobile;
     }
 
-    public String getApi() {
-        return api;
+    public void setWebAutomation(List<WebAutomation> webAutomation) {
+        this.webAutomation = webAutomation;
     }
+
+    public void setApi(List<Api> api) {
+        this.api = api;
+    }
+
+    public void setMobile(List<Mobile> mobile) {
+        this.mobile = mobile;
+    }
+
+
+
+
 
 
 

@@ -5,6 +5,8 @@ public class GetCourses {
     //  when you launch oAuthTest, the courses are extracted as JSON like below:
     /*  use the like --->    https://jsoneditoronline.org/     to understand the JSON Structure and the nested objects
     WE HAVE six <k,v> so let's create 6  variables  (courses has nested objects)
+    This GetCourses class is the main parent object, courses class is the child. courses is a child of GetCourses
+    but he has three child (webApplication, Mobile, Api), so must create three other classes
 
     {
   "instructor": "RahulShetty",
