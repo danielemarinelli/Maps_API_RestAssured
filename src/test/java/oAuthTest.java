@@ -1,13 +1,12 @@
-import POJO.Api;
-import POJO.GetCourses;
-import POJO.WebAutomation;
+import POJO4oauthTest.Api;
+import POJO4oauthTest.GetCourses;
+import POJO4oauthTest.WebAutomation;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static io.restassured.RestAssured.given;

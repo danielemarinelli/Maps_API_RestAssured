@@ -1,4 +1,4 @@
-package POJO;
+package POJO4oauthTest;
 
 import java.util.List;
 
