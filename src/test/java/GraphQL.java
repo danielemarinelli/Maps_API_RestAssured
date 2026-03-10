@@ -33,6 +33,22 @@ public class GraphQL {
     }
 
 
+    // Test the GraphQL Mutation
+    public void MutationGraphQL() {
+        RestAssured.useRelaxedHTTPSValidation();
 
+        String mutationResp = given().log().all().header("Content-Type","application/json")
+                //payload to pass as body gotten from the graphQL server at https://rahulshettyacademy.com/gq/graphql
+                //inspect the page and under NETWORK there is the payload tab there is
+                // the query and variables to pass. Click on VIEW PARSED, Copy it and past it
+                // inside the Body
+                .body("{\"query\":\"mutation{\\n  createLocation(location: {name: \\\"ITA\\\",type:\\\"EMEA\\\",dimension:\\\"50001\\\"})\\n  {\\n    id\\n  }\\n  \\n  createCharacter(character:{name:\\\"Dan\\\",type:\\\"male\\\",status:\\\"married\\\",species:\\\"fantasy\\\",gender:\\\"male\\\",image:\\\"png\\\",originId:29220,locationId:29220})\\n  {\\n    id\\n  }\\n  createEpisode(episode:{name:\\\"Lord Of the Rings\\\",air_date:\\\"2003\\\",episode:\\\"second\\\"})\\n  {\\n    id\\n  }\\n}\\n\",\"variables\":{\"charId\":21595,\"episodeId\":19633}}")
+                .when().post("https://rahulshettyacademy.com/gq/graphql")
+                .then().extract().response().asString();
+
+        System.out.println(mutationResp);
+        JsonPath js = new JsonPath(mutationResp);
+
+    }
 
 }
