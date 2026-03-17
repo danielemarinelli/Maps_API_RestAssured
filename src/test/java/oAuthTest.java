@@ -98,4 +98,23 @@ public class oAuthTest {
     }
 
 
+    // OAuth2.0
+    //Grant Type called 'Authorization Code"
+    //indepth steps of OAuth "Authorization Code" Grant type
+    // example ---> https://in.bookmyshow.com/ when sign-in, use Google account for security (this is OAuth2.0)
+    // let's follow bottom to top approach:
+    public void GetCoursesOAuth2(){
+
+            //step3
+            String resp = given().queryParam("access token","")
+                    .when()
+                    .get("https://rahulshettyacademy.com/getCourse.php").asString();
+
+        System.out.println(resp);
+
+
+    }
+
+
+
 }
