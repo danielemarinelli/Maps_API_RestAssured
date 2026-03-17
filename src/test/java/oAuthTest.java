@@ -105,6 +105,7 @@ public class oAuthTest {
     // let's follow bottom to top approach:
     public void GetCoursesOAuth2(){
 
+        RestAssured.useRelaxedHTTPSValidation();
             //step1
             // DEV will share the URL where USER must sign in manually with Google account credentials.
         // once the sign in is successfully, there will be a link as below, of the app to test, where
